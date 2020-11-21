@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Working with Vue</title>
 
+    <link rel="stylesheet" href="css/main.css">
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
 </head>
 <body>
@@ -15,10 +17,18 @@
         <!-- show the prof data in profs arrays -->
         <ul>
             <li v-for="prof in profs"> 
-                <p v-on:click="logClicked">My awesome Prof Name: {{ prof.name }}, {{ prof.role }} </p>
+                <p>My awesome Prof Name: {{ prof.name }}, {{ prof.role }} </p>
+                <a href="" class="remove-prof" @click.prevent="removeProf(prof)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{prof.name}}</a> <!--:href=""-->
             </li>
         </ul>
+
+        <section class="bio-data" :class="{'show-bio' : showBioData}">
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, mollitia exercitationem omnis deserunt suscipit et fugit magni consectetur eaque reiciendis! Quaerat nihil cum eaque repudiandae in corrupti veritatis sunt error.
+            </p>
+        </section>
     </main>
+
 <script src="js/main.js" type="module"></script>
 </body>
 </html>
