@@ -16,16 +16,17 @@
 
         <!-- show the prof data in profs arrays -->
         <ul>
-            <li v-for="prof in profs"> 
+            <li v-for="prof, index in profs"> 
                 <p>My awesome Prof Name: {{ prof.name }}, {{ prof.role }} </p>
-                <a href="" class="remove-prof" @click.prevent="removeProf(prof)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{prof.name}}</a> <!--:href=""-->
+                <a href="" class="remove-prof" @click.prevent="showProf(prof)" v-bind:class="{'prof-button-modifier' : removeAformat}">Show {{prof.name}}'s Info</a>
+                <a href="" class="remove-prof" @click.prevent="removeProf(index)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{prof.name}}</a> <!--:href=""-->
             </li>
         </ul>
 
+        <!-- show more section -->
         <section class="bio-data" :class="{'show-bio' : showBioData}">
-            <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio, mollitia exercitationem omnis deserunt suscipit et fugit magni consectetur eaque reiciendis! Quaerat nihil cum eaque repudiandae in corrupti veritatis sunt error.
-            </p>
+            <h1>{{ currentProfData.name }}</h1>
+            <p>{{ currentProfData.nickname }}</p>
         </section>
     </main>
 
