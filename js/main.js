@@ -1,6 +1,23 @@
 import { fetchData } from "./components/DataMiner.js";
 
 (() => {
+    Vue.component("prof-card", {
+        props: ["prof"],
+        template: `
+                    <li> 
+                        <img :src="'images/' + prof.avatar" alt="prof image">
+                        <p>My awesome Prof Name: {{prof.name}} </p>
+
+                        <a href="" class="remove-prof"> Show {{prof.name}} Prof name's Info</a>
+                        <a href="" class="remove-prof"> Remove {{prof.name}}</a> 
+                    </li>
+                  `,
+
+        created: function() {
+            console.log(`created ${this.prof.name}'s card`);
+        }
+    });
+
     let  vue_vm = new Vue({
         // link vue to an element in our HTML
         // el: "#app",

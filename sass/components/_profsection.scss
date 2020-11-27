@@ -1,0 +1,25 @@
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.remove-prof {
+    padding: 8px 12px;
+    color:white;
+    background-color: #504c8a;
+    border: thin solid yellowgreen;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 13px;
+    
+    border-radius: 8px;
+    &:hover {background-color: yellowgreen;}
+}
+
+.prof-button-modifier {
+    text-decoration: none;
+}
+
+
+.prof-header { color: salmon;}

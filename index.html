@@ -13,21 +13,24 @@
     <main id="app">
         <h1 @click="clickHeader">{{ message }}</h1>
         <p>{{ anotherMessage }}</p>
-
+        <!-- this is  a custom component defined in main.js-->
+        <ul >
+            <prof-card v-for="prof in profs" :prof="prof" :key="prof.id"></prof-card>
+        </ul>
         <!-- show the prof data in profs arrays -->
-        <ul>
+        <!-- <ul>
             <li v-for="prof, index in profs"> 
                 <p>My awesome Prof Name: {{ prof.name }}, {{ prof.role }} </p>
                 <a href="" class="remove-prof" @click.prevent="showProf(prof)" v-bind:class="{'prof-button-modifier' : removeAformat}">Show {{prof.name}}'s Info</a>
-                <a href="" class="remove-prof" @click.prevent="removeProf(index)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{prof.name}}</a> <!--:href=""-->
+                <a href="" class="remove-prof" @click.prevent="removeProf(index)" v-bind:class="{'prof-button-modifier' : removeAformat}">Remove {{prof.name}}</a> 
             </li>
-        </ul>
+        </ul> -->
 
-        <!-- show more section -->
+        <!-- show more section
         <section class="bio-data" :class="{'show-bio' : showBioData}">
             <h1>{{ currentProfData.name }}</h1>
             <p>{{ currentProfData.nickname }}</p>
-        </section>
+        </section> -->
     </main>
 
 <script src="js/main.js" type="module"></script>
