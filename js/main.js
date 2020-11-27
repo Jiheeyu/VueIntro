@@ -1,22 +1,23 @@
 import { fetchData } from "./components/DataMiner.js";
+import ProfCard from "./components/TheProfCard.js";
 
 (() => {
-    Vue.component("prof-card", {
-        props: ["prof"],
-        template: `
-                    <li> 
-                        <img :src="'images/' + prof.avatar" alt="prof image">
-                        <p>My awesome Prof Name: {{prof.name}} </p>
+    // Vue.component("prof-card", {
+    //     props: ["prof"],
+    //     template: `
+    //                 <li> 
+    //                     <img :src="'images/' + prof.avatar" :alt='prof.name + " image"'>
+    //                     <p>My awesome Prof Name: {{prof.name}} </p>
 
-                        <a href="" class="remove-prof"> Show {{prof.name}} Prof name's Info</a>
-                        <a href="" class="remove-prof"> Remove {{prof.name}}</a> 
-                    </li>
-                  `,
+    //                     <a href="" class="remove-prof"> Show {{prof.name}} Prof name's Info</a>
+    //                     <a href="" class="remove-prof"> Remove {{prof.name}}</a> 
+    //                 </li>
+    //               `,
 
-        created: function() {
-            console.log(`created ${this.prof.name}'s card`);
-        }
-    });
+    //     created: function() {
+    //         console.log(`created ${this.prof.name}'s card`);
+    //     }
+    // });
 
     let  vue_vm = new Vue({
         // link vue to an element in our HTML
@@ -81,6 +82,10 @@ import { fetchData } from "./components/DataMiner.js";
                 //this.profs.splice(this.profs.indexOf(target),1);
                 this.$delete(this.profs, target);
             }
+        },
+
+        components: {
+            "prof-card": ProfCard
         }
 
     }).$mount("#app"); // also connect Vue to your wrapper in HTML
